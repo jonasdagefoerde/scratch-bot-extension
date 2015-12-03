@@ -1,8 +1,7 @@
 /* Extension demonstrating a hat block */
 /* Sayamindu Dasgupta <sayamindu@media.mit.edu>, May 2014 */
 
-new (function() {
-    var ext = this;
+(function(ext) {
     var alarm_went_off = false; // This becomes true after the alarm goes off
 
     // Cleanup function when the extension is unloaded
@@ -31,14 +30,30 @@ new (function() {
        return false;
     };
 
+    ext.get_temp = function(location, callback) {
+        // Make an AJAX call to the Open Weather Maps API
+        $.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
+              }
+        });
+    };
+
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
+            // Block type, block name, function name, default param values
             ['', 'run alarm after %n seconds', 'set_alarm', '2'],
             ['h', 'when alarm goes off', 'when_alarm'],
+            ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
         ]
     };
 
     // Register the extension
-    ScratchExtensions.register('Alarm extension', descriptor, ext);
-})();
+    ScratchExtensions.register('Misc test extensions', descriptor, ext);
+
+})({});
