@@ -22,6 +22,7 @@
     ext.when_alarm = function() {
        // Reset alarm_went_off if it is true, and return true
        // otherwise, return false.
+       console.log("when_alarm started...");
        if (alarm_went_off === true) {
            alarm_went_off = false;
            return true;
