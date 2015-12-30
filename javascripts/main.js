@@ -14,7 +14,7 @@
     return {status: 2, msg: 'Ready'};
   };
 
-  ext.move_forward = function(location, callback) {
+  ext.move_forward = function() {
     // Make an AJAX call to the Particle API
     Console.log("move_forward started: https://api.particle.io/v1/devices/" + device_id + "/move_fwd...");
     $.ajax({
