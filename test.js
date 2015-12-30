@@ -14,6 +14,7 @@
     };
 
     ext.set_alarm = function(time) {
+       console.log("set_alarm started...");
        window.setTimeout(function() {
            alarm_went_off = true;
        }, time*1000);
