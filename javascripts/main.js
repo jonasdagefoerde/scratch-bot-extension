@@ -6,7 +6,7 @@
   // TODO: set device id via hat block
   var device_id = "1c0035001247343432313031";
   */
-  
+
   // Cleanup function when the extension is unloaded
   ext._shutdown = function() {};
 
@@ -19,13 +19,12 @@
   ext.move_forward = function() {
     // Make an AJAX call to the Particle API
     console.log("moin");
-    /*
     console.log("move_forward started: https://api.particle.io/v1/devices/" + device_id + "/move_fwd...");
     $.ajax({
       type: "POST",
-      url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd ' +
-        '-H "Authorization: Bearer ' + access_token + '"' +
-        '-d arg=""',
+      url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd',
+//        '-H "Authorization: Bearer ' + access_token + '"' +
+//        '-d arg=""',
       dataType: 'json',
       data: { access_token: usr_access_token, args: "" },
       success: function() { $("#result").text("Success"); },
@@ -34,7 +33,7 @@
         //return_value = func_response['return_value'];
 //      }
     });
-    console.log("move_forward stopped.");*/
+    console.log("move_forward stopped.");
   };
 
   // Block and block menu descriptions
