@@ -34,7 +34,7 @@
   var descriptor = {
     blocks: [
       // Block type, block name, function name, default param values
-      ['R', 'move forward', 'move_forward', ''],
+      ['w', 'move forward', 'move_forward', ''],
     ]
   };
 
