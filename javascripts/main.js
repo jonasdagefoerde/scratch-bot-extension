@@ -16,7 +16,7 @@
 
   ext.move_forward = function() {
     // Make an AJAX call to the Particle API
-    Console.log("move_forward started: https://api.particle.io/v1/devices/" + device_id + "/move_fwd...");
+    console.log("move_forward started: https://api.particle.io/v1/devices/" + device_id + "/move_fwd...");
     $.ajax({
       type: "POST",
       url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd ' +
