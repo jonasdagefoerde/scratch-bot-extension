@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ajax xhr test with Particle.io API</title>
+</head>
+
+<body>
+    <p>Click on <a id="ajax-link" href="#">Send Request</a> to call Particle.io API.</p>
+    <p>Last ajax request result: <span id="ajax-result"></span></p>
+
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+ 
+      var usr_access_token = "de4187afe811a8fa678ba097c2d1efecfcb6f442";
+      var device_id = "1c0035001247343432313031";
+
+      function ajax_request() {
+        // Make an AJAX call to the Particle API
+        console.log("moin 1");
+        console.log("move_forward started: <https://api.particle.io/v1/devices/" + device_id + "/move_fwd>...");
+        $.ajax({
+          type: "POST",
+          url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd',
+          dataType: 'json',
+          data: { access_token: usr_access_token, args: "" },
+          success: function() { $("#ajax-result").text("success"); }
+    //      success: function( func_response ) {
+            // Got the data - parse it and return the function's return value
+            //return_value = func_response['return_value'];
+    //      }
+        });
+        console.log("moin 2");
+      };
+   
+      $(document).ready(function() {
+        $("#ajax-link").click(function(event) {
+          ajax_request();
+          event.preventDefault();
+        });
+      });
+
+    </script>
+</body>
+
+</html>
