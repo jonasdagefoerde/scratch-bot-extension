@@ -1,11 +1,10 @@
 
 (function(ext) {
-  /*
+
   // TODO: login to receive access token
   var usr_access_token = "de4187afe811a8fa678ba097c2d1efecfcb6f442";
   // TODO: set device id via hat block
   var device_id = "1c0035001247343432313031";
-  */
 
   // Cleanup function when the extension is unloaded
   ext._shutdown = function() {};
