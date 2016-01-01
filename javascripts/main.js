@@ -21,6 +21,7 @@
     $.ajax({
       type: "POST",
       url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd',
+      async: false,
       dataType: 'json',
       data: { access_token: usr_access_token, args: "" },
       success: function() { $("#ajax-result").text("success"); }
