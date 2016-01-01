@@ -19,15 +19,15 @@
     // Make an AJAX call to the Particle API
     console.log("move started");
     console.log("move_forward started: https://api.particle.io/v1/devices/" + device_id + "/move_fwd...");
-    
-    //$.ajax({
-    //  type: "POST",
-    //  url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd',
-    //  dataType: 'json',
-    //  data: { access_token: usr_access_token, args: "" },
-    //  success: function() { $("#ajax-result").text("success"); }
-    //});
-    
+    /*
+    $.ajax({
+      type: "POST",
+      url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd',
+      dataType: 'json',
+      data: { access_token: usr_access_token, args: "" },
+      success: function() { $("#ajax-result").text("success"); }
+    });
+    */
     console.log("move_forward stopped.");
   };
 
