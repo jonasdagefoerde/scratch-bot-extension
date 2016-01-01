@@ -15,25 +15,34 @@
     return {status: 2, msg: 'Ready'};
   };
 
-  ext.move_forward = function() {
-    // Make an AJAX call to the Particle API
-    console.log("move_forward started: https://api.particle.io/v1/devices/" + device_id + "/move_fwd...");
+  // Make an AJAX call to the Particle API
+  function particle_api_call(func_name) {
+    console.log(func_name + " started");
     $.ajax({
       type: "POST",
-      url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd',
+      url: 'https://api.particle.io/v1/devices/' + device_id + '/' + func_name,
       async: false,
       dataType: 'json',
       data: { access_token: usr_access_token, args: "" },
-      success: function() { $("#ajax-result").text("success"); }
+      success: function() {}
     });
-    console.log("move_forward stopped.");
+    console.log(func_name + " stopped");
+
   };
+
+  ext.move_forward = function() { particle_api_call("move_fwd"); };
+  ext.move_backward = function() { particle_api_call("move_bkw"); };
+  ext.move_left = function() { particle_api_call("move_left"); };
+  ext.move_right = function() { particle_api_call("move_right"); };
 
   // Block and block menu descriptions
   var descriptor = {
     blocks: [
       // Block type, block name, function name, default param values
-      ['', 'move scratch-bot forward', 'move_forward']
+      ['', 'move scratch-bot forward', 'move_forward'],
+      ['', 'move scratch-bot backward', 'move_backward'],
+      ['', 'move scratch-bot left', 'move_left'],
+      ['', 'move scratch-bot right', 'move_right'],
     ]
   };
 
