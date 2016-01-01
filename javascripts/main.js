@@ -26,7 +26,8 @@
       dataType: 'json',
       data: { access_token: usr_access_token, args: "" },
       success: function() { $("#ajax-result").text("success"); }
-    });*/
+    });
+    */
     console.log("move_forward stopped.");
   };
 
