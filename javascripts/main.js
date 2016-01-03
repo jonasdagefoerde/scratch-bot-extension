@@ -21,7 +21,7 @@
     $.ajax({
       type: "POST",
       url: 'https://api.particle.io/v1/devices/' + device_id + '/' + func_name,
-      async: true,
+      async: false,
       dataType: 'json',
       data: { access_token: usr_access_token, args: func_args },
       success: function() {}
