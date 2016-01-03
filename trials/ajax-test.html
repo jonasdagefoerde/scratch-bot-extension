@@ -13,7 +13,7 @@
     <script src="jquery-2.1.4.min.js"></script>
     <script>
  
-      var usr_access_token = "eee459dff6a446288ec1486b836e9fc5c337d613";
+      var usr_access_token = "de4187afe811a8fa678ba097c2d1efecfcb6f442";
       var device_id = "1c0035001247343432313031";
 
       function ajax_request() {
@@ -22,10 +22,10 @@
         console.log("move_forward started: <https://api.particle.io/v1/devices/" + device_id + "/move_fwd>...");
         $.ajax({
           type: "POST",
-          url: 'https://api.particle.io/v1/devices/' + device_id + '/move_fwd',
+          url: 'https://api.particle.io/v1/devices/' + device_id + '/move',
           async: false,
           dataType: 'json',
-          data: { access_token: usr_access_token, args: "" },
+          data: { access_token: usr_access_token, args: "fwd" },
           success: function() { $("#ajax-result").text("success"); }
     //      success: function( func_response ) {
             // Got the data - parse it and return the function's return value

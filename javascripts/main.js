@@ -16,24 +16,24 @@
   };
 
   // Make an AJAX call to the Particle API
-  function particle_api_call(func_name) {
+  function particle_api_call(func_name, func_args) {
     console.log(func_name + " started");
     $.ajax({
       type: "POST",
       url: 'https://api.particle.io/v1/devices/' + device_id + '/' + func_name,
       async: true,
       dataType: 'json',
-      data: { access_token: usr_access_token, args: "" },
+      data: { access_token: usr_access_token, args: func_args },
       success: function() {}
     });
     console.log(func_name + " stopped");
 
   };
 
-  ext.move_forward = function() { particle_api_call("move_fwd"); };
-  ext.move_backward = function() { particle_api_call("move_bkw"); };
-  ext.move_left = function() { particle_api_call("move_left"); };
-  ext.move_right = function() { particle_api_call("move_right"); };
+  ext.move_forward = function() { particle_api_call("move", "fwd"); };
+  ext.move_backward = function() { particle_api_call("move", "bkw"); };
+  ext.move_left = function() { particle_api_call("move", "left"); };
+  ext.move_right = function() { particle_api_call("move", "right"); };
 
   // Block and block menu descriptions
   var descriptor = {
