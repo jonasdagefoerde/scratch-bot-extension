@@ -27,8 +27,8 @@
       success: function() {}
     });
     console.log(func_name + " stopped");
-
   };
+
   ext.move_forward = function() { particle_api_call("move", "fwd"); };
   ext.move_backward = function() { particle_api_call("move", "bkw"); };
   ext.move_left = function(duration) { particle_api_call("move", "left " + duration); };
