@@ -32,8 +32,8 @@
 
   ext.move_forward = function() { particle_api_call("move", "fwd"); };
   ext.move_backward = function() { particle_api_call("move", "bkw"); };
-  ext.move_left = function() { particle_api_call("move", "left"); };
-  ext.move_right = function() { particle_api_call("move", "right"); };
+  ext.move_left = function(duration) { particle_api_call("move", "left " + duration); };
+  ext.move_right = function(duration) { particle_api_call("move", "right " + duration); };
 
   // Block and block menu descriptions
   var descriptor = {
@@ -41,8 +41,8 @@
       // Block type, block name, function name, default param values
       ['', 'move scratch-bot forward', 'move_forward'],
       ['', 'move scratch-bot backward', 'move_backward'],
-      ['', 'move scratch-bot left', 'move_left'],
-      ['', 'move scratch-bot right', 'move_right'],
+      ['', 'move scratch-bot left', 'move_left', '245'],
+      ['', 'move scratch-bot right', 'move_right', '245'],
     ]
   };
 
