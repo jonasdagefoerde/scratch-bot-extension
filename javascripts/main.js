@@ -29,8 +29,8 @@
     console.log(func_name + " stopped");
   };
 
-  ext.move_forward = function() { particle_api_call("move", "fwd"); };
-  ext.move_backward = function() { particle_api_call("move", "bkw"); };
+  ext.move_forward = function(duration) { particle_api_call("move", "fwd " + duration); };
+  ext.move_backward = function(duration) { particle_api_call("move", "bkw " + duration); };
   ext.move_left = function(duration) { particle_api_call("move", "left " + duration); };
   ext.move_right = function(duration) { particle_api_call("move", "right " + duration); };
 
@@ -38,8 +38,8 @@
   var descriptor = {
     blocks: [
       // Block type, block name, function name, default param values
-      ['', 'move scratch-bot forward', 'move_forward'],
-      ['', 'move scratch-bot backward', 'move_backward'],
+      ['', 'move scratch-bot forward for %s milli seconds', 'move_forward', '500'],
+      ['', 'move scratch-bot backward for %s milli seconds', 'move_backward', '500'],
       ['', 'move scratch-bot left for %s milli seconds', 'move_left', '245'],
       ['', 'move scratch-bot right for %s milli seconds', 'move_right', '245'],
     ]
