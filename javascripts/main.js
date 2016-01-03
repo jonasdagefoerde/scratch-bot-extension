@@ -32,8 +32,8 @@
 
   ext.move_forward = function() { particle_api_call("move", "fwd"); };
   ext.move_backward = function() { particle_api_call("move", "bkw"); };
-  ext.move_left = function(duration) { particle_api_call("move", "left " + duration); };
-  ext.move_right = function(duration) { particle_api_call("move", "right " + duration); };
+  ext.move_left = function(duration) { particle_api_call("move", "left"); };
+  ext.move_right = function(duration) { particle_api_call("move", "right"); };
 
   // Block and block menu descriptions
   var descriptor = {
